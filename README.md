@@ -28,7 +28,7 @@ Web App that displays quotes and changes the type of quote given by user's negat
 <tr>
 <td>
 <p align="center"> 
-Developed cloud-based web app using natural language processing to analize famous quotes and hit the right mood for users! Very reponsive and can be used on any device from end user. 
+Developed cloud-based web app using natural language processing to analyze famous quotes and hit the right mood for users! Very responsive and can be used on any device from end user. 
 </td>
 </tr>
 </table>
