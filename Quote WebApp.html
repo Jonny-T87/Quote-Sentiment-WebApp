@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Quote WebApp</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Sentiment WebApp</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14584,6 +14584,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
+<!-- Display the mood-based recommendation -->
+  <div>
+    <h2>Mood-Based Recommendation</h2>
+    <p>{{ clickbait_prompt }}</p>
+  </div>
+
+  <a href="{{ url_for('quote_me', brighter=current_id) }}">Brighter Quote</a>
+  <a href="{{ url_for('quote_me', darker=current_id) }}">Darker Quote</a>
+
 </body>
 
 
