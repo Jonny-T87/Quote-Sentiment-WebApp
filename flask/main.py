@@ -135,13 +135,13 @@ def quote_me():
 
     if darker is not None:       
         try:
-        	current_index = int(darker)
+            current_index = int(darker)
             user_mood = 'darker'
         except ValueError:
             # somebody is gaming the system
             current_index = randrange(max_index_value)
 
-        new_index = gimme_a_quote(direction =  'darker', current_index = current_index, max_index_value = max_index_value)
+        new_index = gimme_a_quote(direction='darker', current_index=current_index, max_index_value=max_index_value)
 
     elif brighter is not None:
         try:
@@ -151,25 +151,26 @@ def quote_me():
             # somebody is gaming the system
             current_index = rand_index_value
 
-        new_index = gimme_a_quote(direction =  'brighter', current_index = current_index, max_index_value = max_index_value)
+        new_index = gimme_a_quote(direction='brighter', current_index=current_index, max_index_value=max_index_value)
 
     else:
-    	# grab a random value
-    	new_index = randrange(max_index_value)
-        user_mood = 'neutral' #Default mood for random quotes
+        # grab a random value
+        new_index = randrange(max_index_value)
+        user_mood = 'neutral'  # Default mood for random quotes
 
-random_quote = quote_stash_tmp.iloc[new_index]
-# get a random integer between 0 and max_index_value
-quote=random_quote['quote']
-author = random_quote['author']
-current_id =  random_quote['index']
+    random_quote = quote_stash_tmp.iloc[new_index]
+    # get a random integer between 0 and max_index_value
+    quote = random_quote['quote']
+    author = random_quote['author']
+    current_id = random_quote['index']
+
+
 
     #Generate a clickbait prompt using H2O GenAI
-clickbait_prompt = get_h2o_genai_mood_recommendation(quote, user_mood)
+    clickbait_prompt = get_h2o_genai_mood_recommendation(quote, user_mood)
 
-return render_template("quote.html",
-                       quote = quote,
-                       author = author,
-                       current_id = current_id,
-                       clickbait_prompt = clickbait_prompt
-                       )
+    return render_template("quote.html",
+                            quote = quote,
+                            author = author,
+                            current_id = current_id,
+                            clickbait_prompt = clickbait_prompt)
