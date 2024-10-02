@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, Markup
 import os
+import requests
 import json
 import pandas as pd
 import numpy as np
@@ -174,3 +175,6 @@ def quote_me():
                             author = author,
                             current_id = current_id,
                             clickbait_prompt = clickbait_prompt)
+
+if __name__ == "__main__":
+    app.run() #running flask
